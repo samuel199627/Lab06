@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Rilevamento {
 	
+	//sono i tre parametri che ci interessano di questo laboratorio e che andiamo ad estrapolare dal dataset
 	private String localita;
 	private Date data;
 	private int umidita;

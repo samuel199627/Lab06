@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Citta {
 	
+	//tiene memorizzati tutti i rilevamenti per una citta'
 	
 	private String nome;
 	private List<Rilevamento> rilevamenti;
