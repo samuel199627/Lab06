@@ -25,6 +25,11 @@ import javafx.scene.control.TextArea;
  	Il codice e' molto molto incasinato perche' ho proseguito su una strada complicata in cui ho fatto le variabili distinte
  	per le citta' invece di crearle dentro le classi quindi non era la maniera piu' intelligente. Pero' secondo me funziona quindi
  	tolto alcune cose inutili, l'essenziale del codice dovrebbe esserci.
+ 	
+ 	Il calcolo dell'umdita' media la potevamo direttamente delegare al database mediante un'interrogazione diretta al database 
+ 	usando il comando AVG nella select e ritornando un double la situazione era risolta.
+ 	
+ 	
  */
 
 public class FXMLController {
@@ -68,7 +73,11 @@ public class FXMLController {
     	
     	//preso il mese restituiamo la media di umidita' epr ogni citta'
     	txtResult.clear();
-    	
+    	/*
+    	 	Se qui invece che importare in un 'int', importiamo in un 'Integer', possiamo controllare che 
+    	 	non siamo nel caso di nessuna selezione controllando che non sia 'null'. Questa cosa invece
+    	 	con un 'int' non la possiamo in realta' controllare.
+    	 */
     	int mese=Integer.parseInt(boxMese.getValue());
     	
     	Float[] ritorna= model.getAllRilevamentiMese(mese);

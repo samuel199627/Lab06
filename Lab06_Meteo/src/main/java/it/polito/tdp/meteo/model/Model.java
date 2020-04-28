@@ -92,6 +92,22 @@ public class Model {
 	 	Si trovi la sequenza delle città da visitare nei primi 15 giorni del mese selezionato, tale da minimizzare il costo complessivo.
 	 	Abbiamo una misurazione per ogni citta' e dobbiamo controllare i giorni in maniera correttascorrendo i rilevamenti che 
 	 	selezionato il mese faccio ritornare in ordine di data.
+	 	
+	 	Commento qui di seguito la soluzione che e' stata presentata a lezione di questo laboratorio.
+	 	Si potevano inserire direttamente tutti i rilevamenti di una citta' all'interno della sua classe che la rappresenta. In 
+	 	questa maniera ad ogni chiamata della ricorsione, scorriamo tutte le citta' (con un ciclo) ed esploriamo per ogni data
+	 	tutte e tre le citta' da inserire (sempre se per la data indicata dal livello abbiamo un rilevamento per la citta' che 
+	 	stiamo analizzando e sempre se possibile per le condizioni imposte dal problema). Per ogni citta' nel ciclo che vado
+	 	ad analizzare richiamiamo una funzione che restituisce vero o falso sull'aggiunta possibile o meno. In questa funzione
+	 	per prima cosa scorriamo parziale e contiamo per la citta' che abbiamo in analisi quante occorrenze totali fino ad ora.
+	 	Controlliamo a questo punto tutte le condizioni: la dimensione di parziale che se e' superiore a 3 dobbiamo controllare
+	 	gli ultimi 3 elementi inseriti e se sono uguali possiamo cambiare citta', mentre se l'ultimo elemento che era stato
+	 	inserito era la stessa citta' che stiamo analizzando possiamo tranquillamente inserirla, tanto e' quando andremo in un'
+	 	altra citta' che esploreremo il caso del cambio. Ci sono poi anche le condizioni sul numero massimo di giorni in una citta'
+	 	di cui tenere conto.
+	 	
+	 	
+	 	
 	 */
 	public List<Rilevamento> trovaSequenza(int mese) {
 		rilevamentiPrimiGiorni=new ArrayList<>();
